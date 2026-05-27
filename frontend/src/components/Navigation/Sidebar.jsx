@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   FiGrid,
   FiActivity,
@@ -9,15 +10,13 @@ import {
   FiTrendingUp,
   FiUser,
   FiLogOut,
-  FiMenu,
   FiX,
   FiVideo
 } from 'react-icons/fi';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, setIsOpen }) => {
   const { logout, user } = useAuth();
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
     { name: 'Dashboard', path: '/dashboard', icon: FiGrid },
@@ -30,6 +29,7 @@ const Sidebar = () => {
   ];
 
   const handleLogout = () => {
+    setIsOpen(false);
     logout();
     navigate('/');
   };
@@ -37,13 +37,21 @@ const Sidebar = () => {
   const SidebarContent = () => (
     <div className="flex flex-col h-full bg-[#0c0c14] border-r border-white/[0.05] p-6">
       {/* Brand logo */}
-      <div className="flex items-center gap-3 mb-10">
-        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-purple-650/20">
-          G
+      <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-purple-650/20">
+            G
+          </div>
+          <span className="font-extrabold text-xl tracking-wider bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
+            GK FIT
+          </span>
         </div>
-        <span className="font-extrabold text-xl tracking-wider bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
-          GK FIT
-        </span>
+        <button
+          onClick={() => setIsOpen(false)}
+          className="md:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white transition-colors"
+        >
+          <FiX className="text-lg" />
+        </button>
       </div>
 
       {/* Nav List */}
@@ -94,34 +102,36 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile Drawer Trigger (Sticky Top Bar hamburger helper) */}
-      <div className="md:hidden fixed top-3 left-4 z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-10 h-10 rounded-xl bg-[#12121e]/80 border border-white/[0.08] backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white transition-colors"
-        >
-          {isOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
-        </button>
-      </div>
-
       {/* Desktop Sidebar (Permanent) */}
       <aside className="hidden md:block fixed top-0 bottom-0 left-0 w-64 z-20">
         <SidebarContent />
       </aside>
 
       {/* Mobile Drawer Sidebar */}
-      {isOpen && (
-        <>
-          {/* Backdrop Overlay */}
-          <div
-            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity"
-            onClick={() => setIsOpen(false)}
-          />
-          <aside className="md:hidden fixed top-0 bottom-0 left-0 w-64 z-50">
-            <SidebarContent />
-          </aside>
-        </>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+            {/* Slide-over panel */}
+            <motion.aside
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="md:hidden fixed top-0 bottom-0 left-0 w-64 z-50 shadow-2xl h-full"
+            >
+              <SidebarContent />
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };

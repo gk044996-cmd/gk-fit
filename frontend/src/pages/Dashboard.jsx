@@ -132,7 +132,7 @@ const Dashboard = () => {
   const totals = getNutritionTotals(dietPlan);
 
   return (
-    <div className="flex flex-col gap-6 w-full pb-10">
+    <div className="flex flex-col gap-4 md:gap-6 w-full pb-10">
       {/* Welcome header */}
       <div className="flex flex-col gap-1 text-left">
         <h2 className="text-2xl font-bold text-white tracking-tight">
@@ -147,12 +147,12 @@ const Dashboard = () => {
       <StatsGrid stats={todayStats} />
 
       {/* Middle Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 w-full">
         {/* Left Column: Chart & Streaks (2/3 width) */}
-        <div className="lg:col-span-2 flex flex-col gap-6">
+        <div className="lg:col-span-2 flex flex-col gap-4 md:gap-6">
           <ActivityChart data={weeklyData} />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <WorkoutStreak streak={todayStats.streak} weeklyLogs={weeklyData} />
             
             {/* Motivational Quote & Badges summary */}
@@ -175,7 +175,7 @@ const Dashboard = () => {
         </div>
 
         {/* Right Column: Water, Workout, Diet Previews (1/3 width) */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 md:gap-6">
           {/* Water widget */}
           <WaterTracker intake={todayStats.waterIntake} onLog={handleLogWater} />
 

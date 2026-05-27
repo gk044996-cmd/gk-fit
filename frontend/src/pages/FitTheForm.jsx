@@ -895,8 +895,8 @@ const FitTheForm = () => {
       <main className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
         
         {/* LEFT SIDE: LIVE POSTURE CAPTURE (5 Columns) */}
-        <section className="lg:col-span-5 space-y-4">
-          <div className="relative aspect-[3/4] rounded-2xl border border-white/10 bg-slate-950/60 shadow-2xl backdrop-blur-xl overflow-hidden group">
+        <section className="lg:col-span-5 flex flex-col gap-4">
+          <div className="relative aspect-[4/3] sm:aspect-[3/4] rounded-2xl border border-white/10 bg-slate-950/60 shadow-2xl backdrop-blur-xl overflow-hidden group order-2 lg:order-1">
             
             {/* Real Video / Webcam feed */}
             <video
@@ -987,7 +987,7 @@ const FitTheForm = () => {
 
           {/* Controller Bar */}
           {mode !== 'none' && (
-            <Card className="flex flex-wrap justify-between items-center gap-4 p-4 border border-white/5 z-20 relative">
+            <Card className="flex flex-wrap justify-between items-center gap-4 p-4 border border-white/5 z-20 relative order-3 lg:order-2">
               <div className="flex items-center gap-4 text-xs font-semibold">
                 <button
                   onClick={() => {
@@ -1048,7 +1048,7 @@ const FitTheForm = () => {
           )}
 
           {/* Quick-Change Action Stacks */}
-          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl text-left relative z-20">
+          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-xl text-left relative z-20 order-1 lg:order-3">
             <label className="text-[11px] font-bold tracking-widest text-slate-400 uppercase block mb-2">Change Routine Model:</label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {Object.values(exerciseVideoDatabase)
@@ -1071,7 +1071,7 @@ const FitTheForm = () => {
 
           {/* AI Console Feed */}
           {mode !== 'none' && (
-            <Card className="flex flex-col gap-3 p-5 border border-white/5 text-left relative z-20">
+            <Card className="flex flex-col gap-3 p-5 border border-white/5 text-left relative z-20 order-4 lg:order-4">
               <div className="flex justify-between items-center border-b border-white/5 pb-2">
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" /> Real-time Feedback Stream

@@ -134,14 +134,14 @@ const BmiCalculator = () => {
                 </span>
               </div>
 
-              <div className="flex items-center gap-6 py-2">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 py-2 text-center sm:text-left">
                 {/* Visual circle score */}
                 <div className="w-24 h-24 rounded-full border-4 border-purple-500 flex flex-col items-center justify-center bg-purple-500/5 flex-shrink-0 select-none">
                   <span className="text-3xl font-extrabold text-white leading-none">{result.bmi}</span>
                   <span className="text-[10px] text-gray-400 uppercase mt-0.5">Score</span>
                 </div>
 
-                <div className="flex flex-col gap-1 text-left">
+                <div className="flex flex-col gap-1 items-center sm:items-start">
                   <span className="text-sm font-bold text-white leading-tight">Body Mass Index (BMI)</span>
                   <p className="text-xs text-gray-450 leading-relaxed">
                     A key health indicator mapping weight relative to height.

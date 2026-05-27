@@ -561,7 +561,7 @@ const Diet = () => {
               return (
                 <Card key={meal} className="border border-white/[0.04] p-5 flex flex-col gap-4 overflow-hidden relative text-left">
                   {/* Meal Header */}
-                  <div className="flex justify-between items-center border-b border-white/[0.04] pb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.04] pb-3">
                     <div className="flex items-baseline gap-2">
                       <h3 className="text-base font-bold text-white uppercase tracking-wider">{meal}</h3>
                       <span className="text-xs text-gray-400 font-semibold">{mealCalories} kcal</span>
@@ -610,8 +610,8 @@ const Diet = () => {
                     <div className="flex flex-col gap-3.5 divide-y divide-white/[0.03]">
                       {items.map((item, idx) => (
                         <div key={item._id || idx} className={`flex justify-between items-center ${idx > 0 ? 'pt-3.5' : ''}`}>
-                          <div className="space-y-1">
-                            <div className="text-sm font-bold text-white">{item.name}</div>
+                          <div className="flex-1 min-w-0 pr-3 space-y-1">
+                            <div className="text-sm font-bold text-white truncate" title={item.name}>{item.name}</div>
                             <div className="text-xs text-gray-400 flex flex-wrap items-center gap-x-2 gap-y-0.5">
                               <span className="font-semibold text-gray-300">
                                 {item.quantity} {item.unit}
