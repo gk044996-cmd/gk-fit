@@ -76,6 +76,7 @@ const Login = () => {
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           error={errors.password}
           disabled={loading}
+          autoComplete="current-password"
         />
 
         <div className="text-right">

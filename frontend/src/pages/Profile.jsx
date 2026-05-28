@@ -225,6 +225,7 @@ const Profile = () => {
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     error={errors.password}
                     disabled={saving}
+                    autoComplete="new-password"
                   />
 
                   <Input
@@ -236,6 +237,7 @@ const Profile = () => {
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                     error={errors.confirmPassword}
                     disabled={saving}
+                    autoComplete="new-password"
                   />
                 </div>
               </div>

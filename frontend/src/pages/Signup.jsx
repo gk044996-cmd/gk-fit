@@ -114,6 +114,7 @@ const Signup = () => {
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             error={errors.password}
             disabled={loading}
+            autoComplete="new-password"
           />
 
           <div className="flex flex-col gap-1.5 w-full">
