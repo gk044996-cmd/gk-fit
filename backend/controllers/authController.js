@@ -37,7 +37,7 @@ const loginUser = async (req, res) => {
   }
 };
 
-export {
+module.exports = {
   registerUser,
   loginUser
 };
