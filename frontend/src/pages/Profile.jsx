@@ -97,11 +97,11 @@ const Profile = () => {
             
             {/* User avatar */}
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-orange-500 flex items-center justify-center font-bold text-white text-3xl shadow-lg shadow-purple-500/20 mb-4 select-none">
-              {user?.name.charAt(0).toUpperCase()}
+              {user?.name?.charAt(0).toUpperCase() || 'G'}
             </div>
 
-            <h3 className="text-lg font-bold text-white tracking-tight">{user?.name}</h3>
-            <span className="text-xs text-gray-500 mt-0.5">{user?.email}</span>
+            <h3 className="text-lg font-bold text-white tracking-tight">{user?.name || 'User'}</h3>
+            <span className="text-xs text-gray-500 mt-0.5">{user?.email || ''}</span>
 
             {/* Micro stats table */}
             <div className="grid grid-cols-3 gap-2 w-full mt-8 bg-[#12121e]/60 p-3 rounded-xl border border-white/[0.04]">

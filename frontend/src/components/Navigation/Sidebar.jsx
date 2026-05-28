@@ -81,12 +81,12 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
       {/* Profile info & Logout */}
       <div className="pt-6 border-t border-white/[0.05] flex flex-col gap-4">
         <div className="flex items-center gap-3 px-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-500 to-orange-500 flex items-center justify-center font-bold text-white text-base shadow-md shadow-purple-500/20">
-            {user?.name.charAt(0).toUpperCase()}
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-550 to-orange-500 flex items-center justify-center font-bold text-white text-base shadow-md shadow-purple-500/20">
+            {user?.name?.charAt(0).toUpperCase() || 'G'}
           </div>
           <div className="overflow-hidden leading-tight">
-            <h4 className="text-sm font-semibold text-white truncate">{user?.name}</h4>
-            <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+            <h4 className="text-sm font-semibold text-white truncate">{user?.name || 'User'}</h4>
+            <p className="text-xs text-gray-500 truncate">{user?.email || ''}</p>
           </div>
         </div>
         <button

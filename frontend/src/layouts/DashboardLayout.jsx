@@ -57,12 +57,12 @@ const DashboardLayout = () => {
           </div>
           <div className="flex items-center gap-3">
             <span className="text-xs text-gray-400 font-medium bg-white/[0.04] px-3 py-1 rounded-full border border-white/[0.05] hidden sm:inline">
-              Goal: {user.fitnessGoal}
+              Goal: {user?.fitnessGoal || 'Get Fit'}
             </span>
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-orange-500 flex items-center justify-center font-bold text-white text-xs shadow-md shadow-purple-500/20">
-              {user.name.charAt(0).toUpperCase()}
+              {user?.name?.charAt(0).toUpperCase() || 'G'}
             </div>
-            <span className="text-sm font-medium text-white hidden sm:inline">{user.name}</span>
+            <span className="text-sm font-medium text-white hidden sm:inline">{user?.name || 'User'}</span>
           </div>
         </header>
 

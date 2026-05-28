@@ -70,14 +70,15 @@ const Dashboard = () => {
   };
 
   const fetchDashboardData = async () => {
+    if (!user) return;
     try {
       const stats = await progressService.getDashboardStats();
       setDashboardData(stats);
 
       // Fetch recommended workout based on fitness goal
       let workoutCategory = 'Beginner';
-      if (user.fitnessGoal === 'Muscle Gain') workoutCategory = 'Muscle Gain';
-      if (user.fitnessGoal === 'Fat Loss') workoutCategory = 'Fat Loss';
+      if (user?.fitnessGoal === 'Muscle Gain') workoutCategory = 'Muscle Gain';
+      if (user?.fitnessGoal === 'Fat Loss') workoutCategory = 'Fat Loss';
       
       const workouts = await workoutService.getWorkouts(workoutCategory);
       if (workouts && workouts.length > 0) {
@@ -98,8 +99,10 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetchDashboardData();
-  }, [user.fitnessGoal]);
+    if (user) {
+      fetchDashboardData();
+    }
+  }, [user?.fitnessGoal]);
 
   const handleLogWater = async (amount) => {
     try {
@@ -119,7 +122,7 @@ const Dashboard = () => {
     }
   };
 
-  if (loading || !dashboardData) {
+  if (!user || loading || !dashboardData) {
     return (
       <div className="h-[70vh] flex items-center justify-center">
         <LoadingSpinner size="lg" />
@@ -136,10 +139,10 @@ const Dashboard = () => {
       {/* Welcome header */}
       <div className="flex flex-col gap-1 text-left">
         <h2 className="text-2xl font-bold text-white tracking-tight">
-          Welcome back, {user.name}!
+          Welcome back, {user?.name || 'User'}!
         </h2>
         <p className="text-sm text-gray-400">
-          Here is your fitness dashboard. You are on track to meet your <span className="text-purple-400 font-semibold">{user.fitnessGoal}</span> target.
+          Here is your fitness dashboard. You are on track to meet your <span className="text-purple-400 font-semibold">{user?.fitnessGoal || 'Get Fit'}</span> target.
         </p>
       </div>
 
