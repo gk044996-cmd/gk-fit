@@ -101,6 +101,7 @@ const Signup = () => {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             error={errors.email}
             disabled={loading}
+            autoComplete="email"
           />
         </div>
 
