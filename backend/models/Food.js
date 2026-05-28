@@ -32,6 +32,7 @@ const FoodProxy = {
   findOneAndUpdate: (...args) => global.useFallbackDb ? fallbackDb.foods.findOneAndUpdate(...args) : MongooseFood.findOneAndUpdate(...args),
   countDocuments: (...args) => global.useFallbackDb ? fallbackDb.foods.countDocuments(...args) : MongooseFood.countDocuments(...args),
   insertMany: (...args) => global.useFallbackDb ? fallbackDb.foods.insertMany(...args) : MongooseFood.insertMany(...args),
+  deleteMany: (...args) => global.useFallbackDb ? fallbackDb.foods.write([]) : MongooseFood.deleteMany(...args),
 };
 
 export default FoodProxy;

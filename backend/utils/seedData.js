@@ -292,85 +292,242 @@ const workoutsData = [
 ];
 
 const foodsData = [
-  // Meats & Eggs
-  {
-    name: "Grilled Chicken Breast",
-    calories: 165,
-    protein: 31.0,
-    carbs: 0.0,
-    fats: 3.6,
-    fiber: 0.0,
-    sugar: 0.0,
-    sodium: 74,
-    defaultUnit: "g",
-    category: "Meats"
-  },
-  {
-    name: "Whole Egg (Large)",
-    calories: 143,
-    protein: 12.6,
-    carbs: 0.7,
-    fats: 9.5,
-    fiber: 0.0,
-    sugar: 0.3,
-    sodium: 142,
-    defaultUnit: "piece",
-    weightPerPiece: 50,
-    category: "Meats & Eggs"
-  },
-  // Indian Staples
+  // BREAKFAST
   {
     name: "Idli",
-    calories: 156, // per 100g (approx 78 kcal per 50g piece)
-    protein: 4.0,  // per 100g
-    carbs: 32.0,   // per 100g
-    fats: 0.4,     // per 100g
-    fiber: 2.0,    // per 100g
+    calories: 156,
+    protein: 4.0,
+    carbs: 32.0,
+    fats: 0.4,
+    fiber: 2.0,
     sugar: 0.0,
-    sodium: 320,   // per 100g
+    sodium: 320,
     defaultUnit: "piece",
     weightPerPiece: 50,
-    category: "Indian Foods"
+    category: "breakfast"
   },
   {
     name: "Plain Dosa",
-    calories: 208, // per 100g (approx 166 kcal per 80g piece)
-    protein: 4.7,  // per 100g
-    carbs: 40.6,   // per 100g
-    fats: 3.9,     // per 100g
-    fiber: 1.2,    // per 100g
+    calories: 208,
+    protein: 4.7,
+    carbs: 40.6,
+    fats: 3.9,
+    fiber: 1.2,
     sugar: 0.2,
-    sodium: 188,   // per 100g
+    sodium: 188,
     defaultUnit: "piece",
     weightPerPiece: 80,
-    category: "Indian Foods"
+    category: "breakfast"
   },
   {
-    name: "Low Fat Paneer",
-    calories: 265,
-    protein: 18.3,
-    carbs: 1.2,
-    fats: 20.8,
-    fiber: 0.0,
-    sugar: 0.0,
-    sodium: 18,
-    defaultUnit: "g",
-    category: "Dairy & Paneer"
+    name: "Masala Dosa",
+    calories: 387,
+    protein: 7.8,
+    carbs: 54.2,
+    fats: 14.5,
+    fiber: 3.5,
+    sugar: 0.5,
+    sodium: 420,
+    defaultUnit: "piece",
+    weightPerPiece: 150,
+    category: "breakfast"
   },
   {
-    name: "Whole Wheat Roti",
-    calories: 300, // per 100g (approx 120 kcal per 40g piece)
-    protein: 8.7,  // per 100g
-    carbs: 60.0,   // per 100g
-    fats: 2.0,     // per 100g
-    fiber: 7.5,    // per 100g
+    name: "Rava Dosa",
+    calories: 245,
+    protein: 5.2,
+    carbs: 41.0,
+    fats: 6.8,
+    fiber: 1.8,
+    sugar: 0.3,
+    sodium: 310,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "breakfast"
+  },
+  {
+    name: "Pongal",
+    calories: 350,
+    protein: 8.5,
+    carbs: 52.0,
+    fats: 11.2,
+    fiber: 4.2,
     sugar: 0.1,
-    sodium: 200,   // per 100g
+    sodium: 380,
+    defaultUnit: "cup",
+    weightPerCup: 200,
+    category: "breakfast"
+  },
+  {
+    name: "Upma",
+    calories: 230,
+    protein: 5.0,
+    carbs: 36.0,
+    fats: 7.5,
+    fiber: 2.8,
+    sugar: 0.5,
+    sodium: 290,
+    defaultUnit: "cup",
+    weightPerCup: 150,
+    category: "breakfast"
+  },
+  {
+    name: "Poha",
+    calories: 270,
+    protein: 4.2,
+    carbs: 44.5,
+    fats: 8.0,
+    fiber: 2.5,
+    sugar: 1.2,
+    sodium: 280,
+    defaultUnit: "cup",
+    weightPerCup: 150,
+    category: "breakfast"
+  },
+  {
+    name: "Plain Paratha",
+    calories: 260,
+    protein: 4.8,
+    carbs: 38.0,
+    fats: 9.8,
+    fiber: 3.2,
+    sugar: 0.1,
+    sodium: 190,
+    defaultUnit: "piece",
+    weightPerPiece: 80,
+    category: "breakfast"
+  },
+  {
+    name: "Aloo Paratha",
+    calories: 310,
+    protein: 5.8,
+    carbs: 48.0,
+    fats: 10.5,
+    fiber: 4.5,
+    sugar: 0.2,
+    sodium: 280,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "breakfast"
+  },
+  {
+    name: "Chole Bhature",
+    calories: 650,
+    protein: 14.0,
+    carbs: 82.0,
+    fats: 30.0,
+    fiber: 8.5,
+    sugar: 1.5,
+    sodium: 620,
+    defaultUnit: "piece",
+    weightPerPiece: 260,
+    category: "breakfast"
+  },
+  {
+    name: "Poori",
+    calories: 120,
+    protein: 2.1,
+    carbs: 16.5,
+    fats: 5.2,
+    fiber: 1.1,
+    sugar: 0.1,
+    sodium: 110,
     defaultUnit: "piece",
     weightPerPiece: 40,
-    category: "Indian Foods"
+    category: "breakfast"
   },
-  // Grains & Gym Foods
+  {
+    name: "Appam",
+    calories: 120,
+    protein: 2.0,
+    carbs: 21.0,
+    fats: 2.8,
+    fiber: 1.0,
+    sugar: 1.5,
+    sodium: 95,
+    defaultUnit: "piece",
+    weightPerPiece: 50,
+    category: "breakfast"
+  },
+  {
+    name: "Puttu",
+    calories: 280,
+    protein: 5.5,
+    carbs: 56.0,
+    fats: 3.5,
+    fiber: 3.0,
+    sugar: 0.2,
+    sodium: 120,
+    defaultUnit: "g",
+    category: "breakfast"
+  },
+  {
+    name: "Medu Vada",
+    calories: 150,
+    protein: 3.5,
+    carbs: 16.0,
+    fats: 8.2,
+    fiber: 2.1,
+    sugar: 0.1,
+    sodium: 210,
+    defaultUnit: "piece",
+    weightPerPiece: 45,
+    category: "breakfast"
+  },
+  {
+    name: "Uttapam",
+    calories: 215,
+    protein: 4.8,
+    carbs: 38.2,
+    fats: 4.5,
+    fiber: 2.5,
+    sugar: 0.3,
+    sodium: 240,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "breakfast"
+  },
+  {
+    name: "Bread Omelette",
+    calories: 320,
+    protein: 14.5,
+    carbs: 26.0,
+    fats: 17.5,
+    fiber: 1.8,
+    sugar: 1.2,
+    sodium: 480,
+    defaultUnit: "piece",
+    weightPerPiece: 120,
+    category: "breakfast"
+  },
+  {
+    name: "Paneer Sandwich",
+    calories: 380,
+    protein: 16.2,
+    carbs: 42.0,
+    fats: 15.8,
+    fiber: 4.2,
+    sugar: 2.5,
+    sodium: 410,
+    defaultUnit: "piece",
+    weightPerPiece: 150,
+    category: "breakfast"
+  },
+  {
+    name: "Pav Bhaji",
+    calories: 450,
+    protein: 10.5,
+    carbs: 65.0,
+    fats: 16.5,
+    fiber: 7.8,
+    sugar: 4.5,
+    sodium: 680,
+    defaultUnit: "piece",
+    weightPerPiece: 220,
+    category: "breakfast"
+  },
+
+  // RICE ITEMS
   {
     name: "White Rice (Cooked)",
     calories: 130,
@@ -382,7 +539,7 @@ const foodsData = [
     sodium: 1,
     defaultUnit: "g",
     weightPerCup: 195,
-    category: "Grains"
+    category: "rice"
   },
   {
     name: "Brown Rice (Cooked)",
@@ -395,20 +552,823 @@ const foodsData = [
     sodium: 5,
     defaultUnit: "g",
     weightPerCup: 195,
-    category: "Grains"
+    category: "rice"
   },
   {
-    name: "Rolled Oats (Raw)",
-    calories: 389,
-    protein: 16.9,
-    carbs: 66.3,
-    fats: 6.9,
-    fiber: 10.6,
-    sugar: 0.0,
-    sodium: 2,
+    name: "Lemon Rice",
+    calories: 180,
+    protein: 3.1,
+    carbs: 29.0,
+    fats: 5.8,
+    fiber: 1.4,
+    sugar: 0.1,
+    sodium: 170,
     defaultUnit: "g",
-    weightPerCup: 90,
-    category: "Grains"
+    weightPerCup: 200,
+    category: "rice"
+  },
+  {
+    name: "Tomato Rice",
+    calories: 170,
+    protein: 2.9,
+    carbs: 27.0,
+    fats: 5.4,
+    fiber: 1.6,
+    sugar: 0.4,
+    sodium: 195,
+    defaultUnit: "g",
+    weightPerCup: 200,
+    category: "rice"
+  },
+  {
+    name: "Curd Rice",
+    calories: 145,
+    protein: 3.6,
+    carbs: 21.0,
+    fats: 4.8,
+    fiber: 0.9,
+    sugar: 1.1,
+    sodium: 140,
+    defaultUnit: "g",
+    weightPerCup: 200,
+    category: "rice"
+  },
+  {
+    name: "Coconut Rice",
+    calories: 190,
+    protein: 2.8,
+    carbs: 26.0,
+    fats: 8.3,
+    fiber: 2.3,
+    sugar: 0.3,
+    sodium: 155,
+    defaultUnit: "g",
+    weightPerCup: 200,
+    category: "rice"
+  },
+  {
+    name: "Jeera Rice",
+    calories: 145,
+    protein: 2.6,
+    carbs: 25.5,
+    fats: 3.6,
+    fiber: 1.0,
+    sugar: 0.1,
+    sodium: 140,
+    defaultUnit: "g",
+    weightPerCup: 200,
+    category: "rice"
+  },
+  {
+    name: "Veg Fried Rice",
+    calories: 164,
+    protein: 3.3,
+    carbs: 28.8,
+    fats: 3.9,
+    fiber: 1.5,
+    sugar: 0.6,
+    sodium: 232,
+    defaultUnit: "g",
+    weightPerCup: 250,
+    category: "rice"
+  },
+  {
+    name: "Chicken Biryani",
+    calories: 173,
+    protein: 8.2,
+    carbs: 22.7,
+    fats: 5.5,
+    fiber: 1.4,
+    sugar: 0.6,
+    sodium: 230,
+    defaultUnit: "g",
+    weightPerCup: 300,
+    category: "rice"
+  },
+  {
+    name: "Veg Biryani",
+    calories: 137,
+    protein: 3.3,
+    carbs: 22.7,
+    fats: 3.7,
+    fiber: 1.8,
+    sugar: 0.7,
+    sodium: 207,
+    defaultUnit: "g",
+    weightPerCup: 300,
+    category: "rice"
+  },
+  {
+    name: "Pulao",
+    calories: 140,
+    protein: 2.7,
+    carbs: 23.2,
+    fats: 3.8,
+    fiber: 1.3,
+    sugar: 0.5,
+    sodium: 164,
+    defaultUnit: "g",
+    weightPerCup: 250,
+    category: "rice"
+  },
+  {
+    name: "Sambar Rice",
+    calories: 128,
+    protein: 3.1,
+    carbs: 21.6,
+    fats: 3.0,
+    fiber: 2.1,
+    sugar: 0.3,
+    sodium: 180,
+    defaultUnit: "g",
+    weightPerCup: 250,
+    category: "rice"
+  },
+  {
+    name: "Khichdi",
+    calories: 116,
+    protein: 3.4,
+    carbs: 20.8,
+    fats: 2.1,
+    fiber: 1.9,
+    sugar: 0.1,
+    sodium: 156,
+    defaultUnit: "g",
+    weightPerCup: 250,
+    category: "rice"
+  },
+
+  // CURRIES
+  {
+    name: "Butter Chicken",
+    calories: 253,
+    protein: 18.7,
+    carbs: 5.7,
+    fats: 17.0,
+    fiber: 0.8,
+    sugar: 2.8,
+    sodium: 320,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Chicken Curry",
+    calories: 163,
+    protein: 16.1,
+    carbs: 4.1,
+    fats: 9.0,
+    fiber: 1.2,
+    sugar: 1.0,
+    sodium: 280,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Paneer Butter Masala",
+    calories: 240,
+    protein: 8.3,
+    carbs: 7.0,
+    fats: 20.1,
+    fiber: 1.0,
+    sugar: 3.3,
+    sodium: 300,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Dal Tadka",
+    calories: 120,
+    protein: 6.5,
+    carbs: 16.0,
+    fats: 3.5,
+    fiber: 4.3,
+    sugar: 0.2,
+    sodium: 213,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Rajma Masala",
+    calories: 140,
+    protein: 7.0,
+    carbs: 19.0,
+    fats: 4.1,
+    fiber: 5.0,
+    sugar: 0.3,
+    sodium: 253,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Chole Masala",
+    calories: 147,
+    protein: 6.1,
+    carbs: 21.3,
+    fats: 4.5,
+    fiber: 5.3,
+    sugar: 0.5,
+    sodium: 273,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Sambar",
+    calories: 63,
+    protein: 2.1,
+    carbs: 9.7,
+    fats: 1.7,
+    fiber: 2.8,
+    sugar: 0.8,
+    sodium: 260,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Rasam",
+    calories: 30,
+    protein: 0.5,
+    carbs: 4.3,
+    fats: 1.2,
+    fiber: 0.7,
+    sugar: 0.1,
+    sodium: 233,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Kadai Paneer",
+    calories: 207,
+    protein: 9.2,
+    carbs: 5.5,
+    fats: 16.3,
+    fiber: 1.5,
+    sugar: 1.3,
+    sodium: 280,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Fish Curry",
+    calories: 140,
+    protein: 14.7,
+    carbs: 3.7,
+    fats: 7.2,
+    fiber: 0.8,
+    sugar: 0.5,
+    sodium: 300,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+  {
+    name: "Egg Curry",
+    calories: 173,
+    protein: 9.9,
+    carbs: 4.8,
+    fats: 12.3,
+    fiber: 1.0,
+    sugar: 0.8,
+    sodium: 287,
+    defaultUnit: "g",
+    weightPerCup: 150,
+    category: "curry"
+  },
+
+  // SNACKS
+  {
+    name: "Samosa",
+    calories: 300,
+    protein: 5.0,
+    carbs: 36.0,
+    fats: 15.0,
+    fiber: 2.4,
+    sugar: 1.0,
+    sodium: 360,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "snacks"
+  },
+  {
+    name: "Kachori",
+    calories: 380,
+    protein: 6.4,
+    carbs: 42.0,
+    fats: 21.0,
+    fiber: 3.0,
+    sugar: 0.4,
+    sodium: 420,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "snacks"
+  },
+  {
+    name: "Murukku",
+    calories: 500,
+    protein: 7.3,
+    carbs: 63.3,
+    fats: 25.3,
+    fiber: 3.3,
+    sugar: 0.0,
+    sodium: 633,
+    defaultUnit: "piece",
+    weightPerPiece: 15,
+    category: "snacks"
+  },
+  {
+    name: "Indian Mixture",
+    calories: 520,
+    protein: 10.4,
+    carbs: 56.0,
+    fats: 28.4,
+    fiber: 3.6,
+    sugar: 0.4,
+    sodium: 580,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+  {
+    name: "Banana Chips",
+    calories: 500,
+    protein: 3.6,
+    carbs: 64.0,
+    fats: 27.0,
+    fiber: 6.4,
+    sugar: 9.0,
+    sodium: 360,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+  {
+    name: "Pakora (Onion)",
+    calories: 300,
+    protein: 5.0,
+    carbs: 32.5,
+    fats: 17.5,
+    fiber: 4.0,
+    sugar: 1.0,
+    sodium: 400,
+    defaultUnit: "piece",
+    weightPerPiece: 20,
+    category: "snacks"
+  },
+  {
+    name: "Bhujia",
+    calories: 570,
+    protein: 12.4,
+    carbs: 48.0,
+    fats: 37.0,
+    fiber: 4.0,
+    sugar: 1.0,
+    sodium: 680,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+  {
+    name: "Vada Pav",
+    calories: 300,
+    protein: 6.5,
+    carbs: 44.0,
+    fats: 11.2,
+    fiber: 3.2,
+    sugar: 1.5,
+    sodium: 420,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "snacks"
+  },
+  {
+    name: "Bhel Puri",
+    calories: 180,
+    protein: 3.5,
+    carbs: 32.0,
+    fats: 4.5,
+    fiber: 2.8,
+    sugar: 3.2,
+    sodium: 310,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+  {
+    name: "Pani Puri",
+    calories: 120,
+    protein: 2.2,
+    carbs: 22.0,
+    fats: 2.5,
+    fiber: 1.5,
+    sugar: 0.8,
+    sodium: 280,
+    defaultUnit: "piece",
+    weightPerPiece: 100,
+    category: "snacks"
+  },
+  {
+    name: "Sev Puri",
+    calories: 210,
+    protein: 4.2,
+    carbs: 28.0,
+    fats: 9.0,
+    fiber: 2.2,
+    sugar: 2.5,
+    sodium: 340,
+    defaultUnit: "piece",
+    weightPerPiece: 120,
+    category: "snacks"
+  },
+  {
+    name: "Potato Chips",
+    calories: 540,
+    protein: 6.4,
+    carbs: 53.0,
+    fats: 35.0,
+    fiber: 4.4,
+    sugar: 1.0,
+    sodium: 500,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+  {
+    name: "Popcorn (Butter)",
+    calories: 480,
+    protein: 9.0,
+    carbs: 58.0,
+    fats: 24.0,
+    fiber: 10.0,
+    sugar: 0.4,
+    sodium: 640,
+    defaultUnit: "g",
+    category: "snacks"
+  },
+
+  // DESSERTS
+  {
+    name: "Gulab Jamun",
+    calories: 375,
+    protein: 5.0,
+    carbs: 60.0,
+    fats: 12.5,
+    fiber: 0.5,
+    sugar: 45.0,
+    sodium: 112,
+    defaultUnit: "piece",
+    weightPerPiece: 40,
+    category: "dessert"
+  },
+  {
+    name: "Rasgulla",
+    calories: 266,
+    protein: 4.9,
+    carbs: 57.8,
+    fats: 2.2,
+    fiber: 0.2,
+    sugar: 44.4,
+    sodium: 78,
+    defaultUnit: "piece",
+    weightPerPiece: 45,
+    category: "dessert"
+  },
+  {
+    name: "Jalebi",
+    calories: 366,
+    protein: 2.7,
+    carbs: 73.3,
+    fats: 7.3,
+    fiber: 0.3,
+    sugar: 53.3,
+    sodium: 83,
+    defaultUnit: "piece",
+    weightPerPiece: 30,
+    category: "dessert"
+  },
+  {
+    name: "Kaju Katli",
+    calories: 466,
+    protein: 10.0,
+    carbs: 56.6,
+    fats: 23.3,
+    fiber: 2.0,
+    sugar: 41.3,
+    sodium: 33,
+    defaultUnit: "piece",
+    weightPerPiece: 15,
+    category: "dessert"
+  },
+  {
+    name: "Mysore Pak",
+    calories: 560,
+    protein: 4.8,
+    carbs: 60.0,
+    fats: 34.0,
+    fiber: 0.8,
+    sugar: 48.0,
+    sodium: 60,
+    defaultUnit: "piece",
+    weightPerPiece: 25,
+    category: "dessert"
+  },
+  {
+    name: "Payasam",
+    calories: 147,
+    protein: 3.5,
+    carbs: 22.7,
+    fats: 4.5,
+    fiber: 0.3,
+    sugar: 16.0,
+    sodium: 53,
+    defaultUnit: "cup",
+    weightPerCup: 150,
+    category: "dessert"
+  },
+  {
+    name: "Besan Laddu",
+    calories: 450,
+    protein: 7.3,
+    carbs: 60.0,
+    fats: 20.7,
+    fiber: 2.7,
+    sugar: 40.0,
+    sodium: 67,
+    defaultUnit: "piece",
+    weightPerPiece: 30,
+    category: "dessert"
+  },
+  {
+    name: "Gajar Halwa",
+    calories: 260,
+    protein: 3.8,
+    carbs: 36.0,
+    fats: 11.5,
+    fiber: 1.8,
+    sugar: 25.0,
+    sodium: 75,
+    defaultUnit: "g",
+    category: "dessert"
+  },
+  {
+    name: "Vanilla Ice Cream",
+    calories: 200,
+    protein: 3.5,
+    carbs: 24.0,
+    fats: 11.0,
+    fiber: 0.0,
+    sugar: 21.0,
+    sodium: 50,
+    defaultUnit: "cup",
+    weightPerCup: 100,
+    category: "dessert"
+  },
+  {
+    name: "Rabdi",
+    calories: 300,
+    protein: 8.1,
+    carbs: 31.3,
+    fats: 16.0,
+    fiber: 0.3,
+    sugar: 25.0,
+    sodium: 113,
+    defaultUnit: "g",
+    category: "dessert"
+  },
+
+  // DRINKS & JUICES
+  {
+    name: "Masala Chai",
+    calories: 60,
+    protein: 1.4,
+    carbs: 9.3,
+    fats: 1.7,
+    fiber: 0.0,
+    sugar: 8.0,
+    sodium: 23,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "drinks"
+  },
+  {
+    name: "Black Coffee",
+    calories: 1,
+    protein: 0.1,
+    carbs: 0.0,
+    fats: 0.0,
+    fiber: 0.0,
+    sugar: 0.0,
+    sodium: 3,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "drinks"
+  },
+  {
+    name: "Filter Coffee",
+    calories: 73,
+    protein: 2.0,
+    carbs: 10.0,
+    fats: 2.1,
+    fiber: 0.0,
+    sugar: 8.0,
+    sodium: 30,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "drinks"
+  },
+  {
+    name: "Badam Milk",
+    calories: 120,
+    protein: 3.7,
+    carbs: 16.0,
+    fats: 4.8,
+    fiber: 0.5,
+    sugar: 12.0,
+    sodium: 40,
+    defaultUnit: "ml",
+    weightPerCup: 150,
+    category: "drinks"
+  },
+  {
+    name: "Sweet Lassi",
+    calories: 88,
+    protein: 2.3,
+    carbs: 12.8,
+    fats: 3.0,
+    fiber: 0.0,
+    sugar: 10.4,
+    sodium: 38,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Buttermilk",
+    calories: 24,
+    protein: 1.0,
+    carbs: 1.9,
+    fats: 1.3,
+    fiber: 0.0,
+    sugar: 1.6,
+    sodium: 96,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Sugarcane Juice",
+    calories: 72,
+    protein: 0.2,
+    carbs: 18.0,
+    fats: 0.0,
+    fiber: 0.5,
+    sugar: 16.0,
+    sodium: 4,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Mango Juice",
+    calories: 60,
+    protein: 0.4,
+    carbs: 15.2,
+    fats: 0.1,
+    fiber: 0.7,
+    sugar: 12.8,
+    sodium: 6,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Orange Juice",
+    calories: 44,
+    protein: 0.7,
+    carbs: 10.4,
+    fats: 0.1,
+    fiber: 0.2,
+    sugar: 8.0,
+    sodium: 2,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Watermelon Juice",
+    calories: 32,
+    protein: 0.6,
+    carbs: 7.2,
+    fats: 0.2,
+    fiber: 0.3,
+    sugar: 6.0,
+    sodium: 2,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Tender Coconut",
+    calories: 18,
+    protein: 0.7,
+    carbs: 3.6,
+    fats: 0.2,
+    fiber: 1.0,
+    sugar: 2.5,
+    sodium: 100,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+  {
+    name: "Lemon Juice",
+    calories: 24,
+    protein: 0.2,
+    carbs: 6.0,
+    fats: 0.0,
+    fiber: 0.1,
+    sugar: 4.8,
+    sodium: 48,
+    defaultUnit: "ml",
+    weightPerCup: 250,
+    category: "drinks"
+  },
+
+  // PROTEIN FOODS
+  {
+    name: "Chicken Breast",
+    calories: 165,
+    protein: 31.0,
+    carbs: 0.0,
+    fats: 3.6,
+    fiber: 0.0,
+    sugar: 0.0,
+    sodium: 74,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Boiled Fish",
+    calories: 110,
+    protein: 23.0,
+    carbs: 0.0,
+    fats: 2.0,
+    fiber: 0.0,
+    sugar: 0.0,
+    sodium: 70,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Whole Egg",
+    calories: 143,
+    protein: 12.6,
+    carbs: 0.7,
+    fats: 9.5,
+    fiber: 0.0,
+    sugar: 0.3,
+    sodium: 142,
+    defaultUnit: "piece",
+    weightPerPiece: 50,
+    category: "protein"
+  },
+  {
+    name: "Low Fat Paneer",
+    calories: 265,
+    protein: 18.3,
+    carbs: 1.2,
+    fats: 20.8,
+    fiber: 0.0,
+    sugar: 0.0,
+    sodium: 18,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Tofu",
+    calories: 76,
+    protein: 8.0,
+    carbs: 1.9,
+    fats: 4.8,
+    fiber: 0.3,
+    sugar: 0.0,
+    sodium: 7,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Soya Chunks",
+    calories: 345,
+    protein: 52.0,
+    carbs: 33.0,
+    fats: 0.5,
+    fiber: 13.0,
+    sugar: 0.0,
+    sodium: 15,
+    defaultUnit: "g",
+    category: "protein"
   },
   {
     name: "Smooth Peanut Butter",
@@ -420,9 +1380,20 @@ const foodsData = [
     sugar: 9.0,
     sodium: 17,
     defaultUnit: "g",
-    category: "Gym Foods"
+    category: "protein"
   },
-  // Dairy
+  {
+    name: "Whey Protein",
+    calories: 375,
+    protein: 75.0,
+    carbs: 9.4,
+    fats: 4.7,
+    fiber: 0.0,
+    sugar: 3.1,
+    sodium: 172,
+    defaultUnit: "g",
+    category: "protein"
+  },
   {
     name: "Whole Milk",
     calories: 61,
@@ -434,7 +1405,19 @@ const foodsData = [
     sodium: 44,
     defaultUnit: "ml",
     weightPerCup: 240,
-    category: "Dairy"
+    category: "protein"
+  },
+  {
+    name: "Plain Curd",
+    calories: 60,
+    protein: 3.5,
+    carbs: 4.7,
+    fats: 3.3,
+    fiber: 0.0,
+    sugar: 4.7,
+    sodium: 45,
+    defaultUnit: "g",
+    category: "protein"
   },
   {
     name: "Plain Greek Yogurt",
@@ -447,47 +1430,184 @@ const foodsData = [
     sodium: 36,
     defaultUnit: "g",
     weightPerCup: 245,
-    category: "Dairy"
+    category: "protein"
   },
-  // Fruits & Veg
+
+  // NUTS & DRY FRUITS
   {
-    name: "Banana",
-    calories: 89,
-    protein: 1.1,
-    carbs: 22.8,
-    fats: 0.3,
-    fiber: 2.6,
-    sugar: 12.2,
+    name: "Almonds",
+    calories: 579,
+    protein: 21.0,
+    carbs: 21.6,
+    fats: 50.0,
+    fiber: 12.5,
+    sugar: 4.2,
     sodium: 1,
-    defaultUnit: "piece",
-    weightPerPiece: 120,
-    category: "Fruits"
-  },
-  {
-    name: "Apple (Medium)",
-    calories: 52,
-    protein: 0.3,
-    carbs: 13.8,
-    fats: 0.2,
-    fiber: 2.4,
-    sugar: 10.4,
-    sodium: 1,
-    defaultUnit: "piece",
-    weightPerPiece: 180,
-    category: "Fruits"
-  },
-  {
-    name: "Broccoli (Raw)",
-    calories: 34,
-    protein: 2.8,
-    carbs: 6.6,
-    fats: 0.4,
-    fiber: 2.6,
-    sugar: 1.7,
-    sodium: 33,
     defaultUnit: "g",
-    weightPerCup: 91,
-    category: "Vegetables"
+    category: "protein"
+  },
+  {
+    name: "Cashews",
+    calories: 553,
+    protein: 18.2,
+    carbs: 30.1,
+    fats: 43.8,
+    fiber: 3.3,
+    sugar: 5.9,
+    sodium: 12,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Pistachios",
+    calories: 560,
+    protein: 20.0,
+    carbs: 27.2,
+    fats: 45.3,
+    fiber: 10.6,
+    sugar: 7.7,
+    sodium: 1,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Walnuts",
+    calories: 654,
+    protein: 15.2,
+    carbs: 13.7,
+    fats: 65.2,
+    fiber: 6.7,
+    sugar: 2.6,
+    sodium: 2,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Raisins",
+    calories: 299,
+    protein: 3.1,
+    carbs: 79.2,
+    fats: 0.5,
+    fiber: 3.7,
+    sugar: 59.2,
+    sodium: 11,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Dates",
+    calories: 277,
+    protein: 1.8,
+    carbs: 75.0,
+    fats: 0.2,
+    fiber: 6.7,
+    sugar: 66.0,
+    sodium: 1,
+    defaultUnit: "g",
+    category: "protein"
+  },
+  {
+    name: "Peanuts",
+    calories: 567,
+    protein: 25.8,
+    carbs: 16.1,
+    fats: 49.2,
+    fiber: 8.5,
+    sugar: 4.7,
+    sodium: 18,
+    defaultUnit: "g",
+    category: "protein"
+  },
+
+  // FAST FOODS
+  {
+    name: "Cheese Pizza",
+    calories: 266,
+    protein: 11.4,
+    carbs: 30.0,
+    fats: 10.1,
+    fiber: 2.3,
+    sugar: 3.6,
+    sodium: 550,
+    defaultUnit: "g",
+    category: "fast-food"
+  },
+  {
+    name: "Chicken Burger",
+    calories: 240,
+    protein: 12.0,
+    carbs: 25.3,
+    fats: 10.0,
+    fiber: 1.3,
+    sugar: 3.6,
+    sodium: 413,
+    defaultUnit: "piece",
+    weightPerPiece: 150,
+    category: "fast-food"
+  },
+  {
+    name: "French Fries",
+    calories: 312,
+    protein: 3.4,
+    carbs: 41.0,
+    fats: 15.0,
+    fiber: 3.8,
+    sugar: 0.3,
+    sodium: 210,
+    defaultUnit: "g",
+    category: "fast-food"
+  },
+  {
+    name: "Veg Noodles",
+    calories: 160,
+    protein: 3.2,
+    carbs: 29.0,
+    fats: 3.6,
+    fiber: 1.2,
+    sugar: 0.9,
+    sodium: 240,
+    defaultUnit: "g",
+    weightPerCup: 200,
+    category: "fast-food"
+  },
+  {
+    name: "Veg Momos",
+    calories: 120,
+    protein: 3.2,
+    carbs: 22.6,
+    fats: 1.6,
+    fiber: 1.2,
+    sugar: 0.8,
+    sodium: 213,
+    defaultUnit: "piece",
+    weightPerPiece: 25,
+    category: "fast-food"
+  },
+  {
+    name: "Chicken Shawarma",
+    calories: 210,
+    protein: 14.0,
+    carbs: 18.0,
+    fats: 9.0,
+    fiber: 1.6,
+    sugar: 1.4,
+    sodium: 345,
+    defaultUnit: "piece",
+    weightPerPiece: 200,
+    category: "fast-food"
+  },
+  {
+    name: "Fried Chicken",
+    calories: 280,
+    protein: 19.5,
+    carbs: 8.2,
+    fats: 18.5,
+    fiber: 0.5,
+    sugar: 0.1,
+    sodium: 490,
+    defaultUnit: "g",
+    weightPerPiece: 100,
+    category: "fast-food"
   }
 ];
 
@@ -501,10 +1621,11 @@ const seedAllData = async () => {
     }
 
     const foodCount = await Food.countDocuments();
-    if (foodCount === 0) {
-      console.log('Seeding Foods...');
+    if (foodCount < 70) {
+      console.log(`Food count is ${foodCount}. Clearing and re-seeding with expanded Indian foods dataset...`);
+      await Food.deleteMany({});
       await Food.insertMany(foodsData);
-      console.log('Foods Seeded Successfully!');
+      console.log('Indian Foods Seeded Successfully!');
     }
   } catch (error) {
     console.error('Error seeding database:', error.message);
