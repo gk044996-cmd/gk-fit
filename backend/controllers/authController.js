@@ -6,17 +6,23 @@ import generateToken from '../utils/tokenGenerator.js';
 // @route   POST /api/auth/register
 // @access  Public
 const registerUser = async (req, res) => {
-  const { name, email, password, gender, age, height, weight, fitnessGoal } = req.body;
-
-  if (!name || !email || !password) {
-    return res.status(400).json({ message: 'Please provide all required fields (name, email, password)' });
-  }
-
   try {
-    const userExists = await User.findOne({ email });
+    const { name, email, password, gender, age, height, weight, fitnessGoal } = req.body;
 
-    if (userExists) {
-      return res.status(400).json({ message: 'User already exists with this email' });
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide all required fields (name, email, password)'
+      });
+    }
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: "User already exists"
+      });
     }
 
     // Hash password
@@ -34,23 +40,34 @@ const registerUser = async (req, res) => {
       fitnessGoal: fitnessGoal || 'Get Fit',
     });
 
-    if (user) {
-      res.status(201).json({
+    const token = generateToken(user._id);
+
+    res.status(201).json({
+      success: true,
+      message: "Registration successful",
+      token,
+      _id: user._id,
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      gender: user.gender,
+      age: user.age,
+      height: user.height,
+      weight: user.weight,
+      fitnessGoal: user.fitnessGoal,
+      user: {
+        id: user._id,
         _id: user._id,
         name: user.name,
-        email: user.email,
-        gender: user.gender,
-        age: user.age,
-        height: user.height,
-        weight: user.weight,
-        fitnessGoal: user.fitnessGoal,
-        token: generateToken(user._id),
-      });
-    } else {
-      res.status(400).json({ message: 'Invalid user data' });
-    }
+        email: user.email
+      }
+    });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
   }
 };
 
@@ -58,36 +75,62 @@ const registerUser = async (req, res) => {
 // @route   POST /api/auth/login
 // @access  Public
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ message: 'Please provide email and password' });
-  }
-
   try {
-    const user = await User.findOne({ email });
+    const { email, password } = req.body;
 
-    if (user) {
-      // Validate password
-      const isMatch = await bcrypt.compare(password, user.password);
-      if (isMatch) {
-        return res.json({
-          _id: user._id,
-          name: user.name,
-          email: user.email,
-          gender: user.gender,
-          age: user.age,
-          height: user.height,
-          weight: user.weight,
-          fitnessGoal: user.fitnessGoal,
-          token: generateToken(user._id),
-        });
-      }
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide email and password'
+      });
     }
 
-    res.status(401).json({ message: 'Invalid email or password' });
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password"
+      });
+    }
+
+    // Validate password
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password"
+      });
+    }
+
+    const token = generateToken(user._id);
+
+    res.status(200).json({
+      success: true,
+      token,
+      _id: user._id,
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      gender: user.gender,
+      age: user.age,
+      height: user.height,
+      weight: user.weight,
+      fitnessGoal: user.fitnessGoal,
+      user: {
+        id: user._id,
+        _id: user._id,
+        name: user.name,
+        email: user.email
+      }
+    });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
   }
 };
 

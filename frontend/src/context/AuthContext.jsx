@@ -31,6 +31,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const data = await authService.login(email, password);
       localStorage.setItem('gk_fit_token', data.token);
+      localStorage.setItem('token', data.token);
       setUser({
         _id: data._id,
         name: data.name,
@@ -52,6 +53,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const data = await authService.register(userData);
       localStorage.setItem('gk_fit_token', data.token);
+      localStorage.setItem('token', data.token);
       setUser({
         _id: data._id,
         name: data.name,
@@ -70,6 +72,7 @@ export const AuthProvider = ({ children }) => {
 
   const logoutUser = () => {
     localStorage.removeItem('gk_fit_token');
+    localStorage.removeItem('token');
     setUser(null);
   };
 
