@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '',
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 // Interceptor to attach JWT token
-api.interceptors.request.use(
+API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('gk_fit_token');
     if (token) {
@@ -21,4 +21,4 @@ api.interceptors.request.use(
   }
 );
 
-export default api;
+export default API;
